@@ -5,6 +5,8 @@ import math
 class Circle(Figure):
 
     def __init__(self, radius):
+        if radius <= 0:
+            raise ValueError("Переданное значение меньше или равно нулю")
         self.radius = radius
         self.perimeter = self.find_perimeter()
         self.area = self.find_area()
