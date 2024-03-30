@@ -45,10 +45,9 @@ Content-Type: text/html
 Request Method: {req.command}
 Response Status: {status_code}\n"""
     )
-    # Если запрос без ошибки, то передаём все принятые заголовки обратно
-    if status_code == '200 OK':
-        for key in request.headers.keys():
-            answer += f"""{key}: {request.headers[key]}\n"""
+
+    for key in request.headers.keys():
+        answer += f"""{key}: {request.headers[key]}\n"""
 
     # Отправка
     conn.sendall(answer.encode('utf-8'))
