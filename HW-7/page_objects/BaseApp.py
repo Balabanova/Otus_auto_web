@@ -25,6 +25,10 @@ class BasePage:
                                                          message=f"There is title={self.driver.title}, "
                                                                  f"but expected title={title} ")
 
+    def wait_element(self, locator, timeout=10):
+        return WebDriverWait(self.driver, timeout).until((EC.title_is(locator)),
+                                                         message=f"Can't find elements by locator {locator}")
+
     def input_text(self, locator, text):
         name_field = self.find_element(locator)
         name_field.send_keys(text)

@@ -56,6 +56,21 @@ class RegisterPage:
 
 class AdminDashboardPage:
     LOCATOR_LOGOUT_BUTTON = (By.CSS_SELECTOR, "#container .navbar-right .fa-sign-out")
+    LOCATOR_MENU_CATALOG_BUTTON = (By.CSS_SELECTOR, "#menu-catalog")
+    LOCATOR_MENU_CATALOG_PRODUCTS = (By.CSS_SELECTOR, "#menu-catalog  li:nth-of-type(2)")
+    LOCATOR_MENU_CATALOG_ACTIVE = (By.CSS_SELECTOR, '#menu-catalog a[aria-expanded="true"]')
+
+
+class AdminProductPage:
+    LOCATOR_ADD_PRODUCT = (By.CSS_SELECTOR, '.page-header a[data-original-title="Add New"]')
+
+
+class AdminNewProductPage:
+    LOCATOR_GENERAL_NAME = (By.CSS_SELECTOR, "input#input-name1")
+    LOCATOR_GENERAL_TAG_TITLE = (By.CSS_SELECTOR, "input#input-meta-title1")
+    LOCATOR_DATA_BUTTON = (By.XPATH, "//*[contains(text(),'Data')]")
+    LOCATOR_DATA_MODEL = (By.CSS_SELECTOR, "input#input-model")
+    LOCATOR_SAVE_BUTTON = (By.CSS_SELECTOR, 'button[data-original-title="Save"]')
 
 
 class CartPage:
