@@ -36,4 +36,7 @@ class BasePage:
     def click_on_element(self, locator):
         self.find_element(locator).click()
 
+    def accept_browser(self):
+        self.driver.switch_to.alert.accept()
+
 

@@ -1,5 +1,6 @@
 import pytest
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 
 
 def pytest_addoption(parser):
@@ -19,7 +20,9 @@ def driver(request):
 
     _browser = None
     if br == "chrome":
-        _browser = webdriver.Chrome()
+        options = Options()
+        options.add_argument("--disable-notifications")
+        _browser = webdriver.Chrome(options=options)
     elif br == "firefox":
         _browser = webdriver.Firefox()
     elif br == "edge":
@@ -29,3 +32,10 @@ def driver(request):
 
     yield _browser
     _browser.quit()
+
+
+@pytest.fixture(scope='class')
+def prod_name():
+    name = ""
+    yield name
+

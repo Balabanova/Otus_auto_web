@@ -1,6 +1,11 @@
 from selenium.webdriver.common.by import By
 
 
+def get_unique_locator_xpath(locator_str):
+    locator = (By.XPATH, locator_str)
+    return locator
+
+
 class MainPage:
     LOCATOR_SLIDE_SHOW = (By.CSS_SELECTOR, "#content .slideshow #slideshow0")
     LOCATOR_COMPANIES_CAROUSEL = (By.CSS_SELECTOR, "#content .carousel #carousel0")
@@ -63,6 +68,7 @@ class AdminDashboardPage:
 
 class AdminProductPage:
     LOCATOR_ADD_PRODUCT = (By.CSS_SELECTOR, '.page-header a[data-original-title="Add New"]')
+    LOCATOR_DELETE_BUTTON = (By.CSS_SELECTOR, 'button[data-original-title="Delete"]')
 
 
 class AdminNewProductPage:
