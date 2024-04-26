@@ -2,10 +2,9 @@ from BaseApp import BasePage
 from AdminLoginPage import AdminLoginPage
 from locators import AdminProductPage as APP
 from locators import AdminNewProductPage as ANPP
-from locators import AdminDashboardPage as ADP
 import random
 import string
-import time
+import allure
 
 
 def _random_string():
@@ -20,18 +19,20 @@ class AdminNewProductsPage(BasePage):
         self.find_element(APP.LOCATOR_ADD_PRODUCT).click()
 
     def create_new_product(self):
-        name = _random_string()
-        self.input_name(name)
+        with allure.step("Создание нового товара"):
+            name = _random_string()
+            self.input_name(name)
 
-        tag = _random_string()
-        self.input_tag(tag)
+            tag = _random_string()
+            self.input_tag(tag)
 
-        self.click_on_element(ANPP.LOCATOR_DATA_BUTTON)
-        model = _random_string()
-        self.input_model(model)
+            self.click_on_element(ANPP.LOCATOR_DATA_BUTTON)
+            model = _random_string()
+            self.input_model(model)
 
-        self.click_on_element(ANPP.LOCATOR_SAVE_BUTTON)
-        return [name, tag, model]
+            self.click_on_element(ANPP.LOCATOR_SAVE_BUTTON)
+
+            return [name, tag, model]
 
     def input_name(self, name):
         self.input_text(ANPP.LOCATOR_GENERAL_NAME, name)

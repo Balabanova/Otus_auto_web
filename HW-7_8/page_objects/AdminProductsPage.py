@@ -3,6 +3,7 @@ from locators import AdminProductPage as APP
 from locators import AdminDashboardPage as ADP
 from locators import get_unique_locator_xpath
 import time
+import allure
 
 
 class AdminProductsPage(BasePage):
@@ -19,11 +20,13 @@ class AdminProductsPage(BasePage):
                 time.sleep(0.5)
 
     def find_product_by_name(self, name, timeout=10):
-        locator = f"//*/div/table/tbody//*[contains(text(),'{name}')]"
-        return self.find_elements(get_unique_locator_xpath(locator), timeout)
+        with allure.step(f"Находим товар по имени {name}"):
+            locator = f"//*/div/table/tbody//*[contains(text(),'{name}')]"
+            return self.find_elements(get_unique_locator_xpath(locator), timeout)
 
     def delete_product_by_name(self, name):
-        locator = f"//*/div/table/tbody/tr//*[contains(text(),'{name}')] /preceding-sibling::* /input"
-        self.click_on_element(get_unique_locator_xpath(locator))
-        self.click_on_element(APP.LOCATOR_DELETE_BUTTON)
+        with allure.step(f"Удаляем товар по имени {name}"):
+            locator = f"//*/div/table/tbody/tr//*[contains(text(),'{name}')] /preceding-sibling::* /input"
+            self.click_on_element(get_unique_locator_xpath(locator))
+            self.click_on_element(APP.LOCATOR_DELETE_BUTTON)
 

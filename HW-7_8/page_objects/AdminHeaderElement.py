@@ -1,5 +1,6 @@
 from BaseApp import BasePage
 from locators import AdminDashboardPage as AP
+import allure
 
 
 class HeaderElement(BasePage):
@@ -9,5 +10,6 @@ class HeaderElement(BasePage):
         self.url = self.base_url + "/admin"
 
     def log_out(self):
-        self.find_element(AP.LOCATOR_LOGOUT_BUTTON).click()
+        with allure.step("Выход из админки"):
+            self.find_element(AP.LOCATOR_LOGOUT_BUTTON).click()
 

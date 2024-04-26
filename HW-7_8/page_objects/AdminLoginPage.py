@@ -1,6 +1,6 @@
 from BaseApp import BasePage
 from locators import AdminLoginPage as AP
-import pytest
+import allure
 
 
 class AdminLoginPage(BasePage):
@@ -13,9 +13,10 @@ class AdminLoginPage(BasePage):
         return self.driver.get(self.url)
     
     def log_in(self, login, password):
-        self.input_login(login)
-        self.input_password(password)
-        self.confirm()
+        with allure.step("Логин в админку"):
+            self.input_login(login)
+            self.input_password(password)
+            self.confirm()
 
     def input_login(self, login):
         self.input_text(AP.LOCATOR_USERNAME_INPUT, login)

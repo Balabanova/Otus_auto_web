@@ -1,6 +1,7 @@
 from BaseApp import BasePage
 from locators import MainPage as MP
 import random
+import allure
 
 
 class MainPage(BasePage):
@@ -24,5 +25,6 @@ class MainPage(BasePage):
         return random_el, name_el
 
     def add_to_cart(self, elem):
-        products = self.get_all_products()
-        products[elem].click()
+        with allure.step("Добавление товара в корзину"):
+            products = self.get_all_products()
+            products[elem].click()
