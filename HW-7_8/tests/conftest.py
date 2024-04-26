@@ -82,23 +82,6 @@ def logger():
     return logger
 
 
-# @pytest.hookimpl(tryfirst=True, hookwrapper=True)
-# def pytest_runtest_makereport( item, call):
-#     outcome = yield
-#     rep = outcome.get_result()
-#     if True:
-#     #if rep.when == 'call' and rep.failed:
-#         try:
-#             img = driver.save_screenshot(r"\Screenshots\fail.png")
-#             allure.attach(
-#                 img,
-#                 name='screenshot',
-#                 attachment_type=AttachmentType.PNG
-#             )
-#         except Exception as e:
-#             print('Fail to take screen-shot: {}'.format(e))
-
-
 @pytest.fixture(scope="function", autouse=True)
 def screenshot_on_failure(request, driver):
     def fin():
