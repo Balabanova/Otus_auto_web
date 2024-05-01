@@ -1,5 +1,6 @@
 from BaseApp import BasePage
 from locators import RegisterPage as RP
+import allure
 
 
 class RegistrationPage(BasePage):
@@ -12,10 +13,11 @@ class RegistrationPage(BasePage):
         return self.driver.get(self.url)
 
     def fill_personal_details(self, firstname, lastname, email, telephone):
-        self.input_f_name(firstname)
-        self.input_l_name(lastname)
-        self.input_email(email)
-        self.input_telephone(telephone)
+        with allure.step("Заполнение персональных данных"):
+            self.input_f_name(firstname)
+            self.input_l_name(lastname)
+            self.input_email(email)
+            self.input_telephone(telephone)
 
     def input_f_name(self, f_name):
         self.input_text(RP.LOCATOR_FIRSTNAME_INPUT, f_name)

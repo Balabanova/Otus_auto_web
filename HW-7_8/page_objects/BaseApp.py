@@ -1,6 +1,7 @@
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import allure
 
 
 class BasePage:
@@ -21,8 +22,9 @@ class BasePage:
                                                          message=f"Can't find elements by locator {locator}")
 
     def wait_title(self, title, timeout=10):
-        return WebDriverWait(self.driver, timeout).until((EC.title_is(title)),
-                                                         message=f"There is title={self.driver.title}, "
+        with allure.step(f"Ожидание тайтла {title}"):
+            return WebDriverWait(self.driver, timeout).until((EC.title_is(title)),
+                                                                message=f"There is title={self.driver.title}, "
                                                                  f"but expected title={title} ")
 
     def wait_element(self, locator, timeout=10):

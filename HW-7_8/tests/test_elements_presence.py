@@ -4,6 +4,7 @@ from ProductPage import ProductPage
 from AdminLoginPage import AdminLoginPage
 from RegistrationPage import RegistrationPage
 import locators
+import allure
 
 
 class TestT:
@@ -11,6 +12,7 @@ class TestT:
     Набор тестов проверяет наличие элементов на 5 страницах:
     главная страница, каталог, карточка товара, страница логина в админку, страница регистрации пользователя
     """
+    @allure.title("Проверка наличия элементов на главной странице")
     def test_main_page(self, driver, base_url):
         main = MainPage(driver, base_url)
         main.go_to_home_page()
@@ -20,6 +22,7 @@ class TestT:
         assert main.find_element(locators.MainPage.LOCATOR_FEATURED_PRODUCT_IMAGE)
         assert main.find_element(locators.MainPage.LOCATOR_SLIDE_SHOW)
 
+    @allure.title("Проверка наличия элементов на странице каталога")
     def test_catalog_page(self, driver, base_url):
         catalog = CatalogDesktopsPage(driver, base_url)
         catalog.go_to_desktops_page()
@@ -29,6 +32,7 @@ class TestT:
         assert catalog.find_element(locators.CatalogPage.LOCATOR_INPUT_LIMIT_INPUT)
         assert catalog.find_element(locators.CatalogPage.LOCATOR_GRID_VIEW_BUTTON)
 
+    @allure.title("Проверка наличия элементов на странице товара")
     def test_product_page(self, driver, base_url):
         product = ProductPage(driver, base_url)
         product.go_to_product_page()
@@ -38,6 +42,7 @@ class TestT:
         assert product.find_element(locators.ProductPage.LOCATOR_RATING_DIV)
         assert product.find_element(locators.ProductPage.LOCATOR_WRITE_REVIEW_LINK)
 
+    @allure.title("Проверка наличия элементов на странице логина в админку")
     def test_admin_login_page(self, driver, base_url):
         admin_login = AdminLoginPage(driver, base_url)
         admin_login.go_to_admin_login_page()
@@ -47,6 +52,7 @@ class TestT:
         assert admin_login.find_element(locators.AdminLoginPage.LOCATOR_PASSWORD_INPUT)
         assert admin_login.find_element(locators.AdminLoginPage.LOCATOR_FA_ICON)
 
+    @allure.title("Проверка наличия элементов на странице регистрации")
     def test_register_page(self, driver, base_url):
         registration = RegistrationPage(driver, base_url)
         registration.go_to_registration_page()

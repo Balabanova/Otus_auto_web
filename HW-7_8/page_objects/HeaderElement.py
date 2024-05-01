@@ -1,4 +1,5 @@
 from BaseApp import BasePage
+import allure
 from locators import Navigation
 
 
@@ -11,8 +12,9 @@ class HeaderElement(BasePage):
     }
 
     def change_currency(self, currency):
-        self.find_element(Navigation.LOCATOR_CURRENCY_BUTTON).click()
-        cur = self.find_element(self.currency_locators[currency])
-        cur_char = (cur.text)[0]
-        cur.click()
-        return cur_char
+        with allure.step("Изменение валюты"):
+            self.find_element(Navigation.LOCATOR_CURRENCY_BUTTON).click()
+            cur = self.find_element(self.currency_locators[currency])
+            cur_char = (cur.text)[0]
+            cur.click()
+            return cur_char

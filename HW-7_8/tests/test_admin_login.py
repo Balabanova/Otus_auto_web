@@ -1,4 +1,5 @@
 import pytest
+import allure
 from AdminLoginPage import AdminLoginPage
 from AdminHeaderElement import HeaderElement
 
@@ -15,20 +16,22 @@ class TestAdmin:
     """
     Набор тестов проверяет вход и выход в/из админки
     """
-    def test_login(self, setup):
+    @allure.title("Проверка входа в админку")
+    def test_login(self, setup, driver):
         page, _ = setup
 
         # Входим в админку
         page.log_in("user", "bitnami")
 
-        # Проверяем, что тайтл страницы изменился
-        assert page.wait_title("Dashboard")
+        with allure.step("Проверяем, что тайтл страницы изменился"):
+            assert page.wait_title("Dashboard")
 
+    @allure.title("Проверка выхода из админки")
     def test_logout(self, setup):
         page, header = setup
 
         # Выходим из админки
         header.log_out()
 
-        # Проверяем, что тайтл страницы изменился
-        assert page.wait_title("Administration")
+        with allure.step("Проверяем, что тайтл страницы изменился"):
+            assert page.wait_title("Administration")
