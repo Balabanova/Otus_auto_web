@@ -16,9 +16,3 @@ class Figure(ABC):
             return round(float(self.area) + float(s_figure.area), 3)
         else:
             raise ValueError("Передана не фигура")
-
-
-
-
-
-
