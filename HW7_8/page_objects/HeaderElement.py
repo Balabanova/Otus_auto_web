@@ -1,6 +1,6 @@
 from BaseApp import BasePage
 import allure
-from locators import Navigation
+from HW7_8.locators import Navigation
 
 
 class HeaderElement(BasePage):

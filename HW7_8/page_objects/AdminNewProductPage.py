@@ -1,7 +1,7 @@
 from BaseApp import BasePage
 from AdminLoginPage import AdminLoginPage
-from locators import AdminProductPage as APP
-from locators import AdminNewProductPage as ANPP
+from HW7_8.locators import AdminProductPage as APP
+from HW7_8.locators import AdminNewProductPage as ANPP
 import random
 import string
 import allure

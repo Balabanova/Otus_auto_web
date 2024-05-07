@@ -1,5 +1,5 @@
 from BaseApp import BasePage
-from locators import CartPage as CP
+from HW7_8.locators import CartPage as CP
 import pytest
 
 

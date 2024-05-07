@@ -1,5 +1,5 @@
 from BaseApp import BasePage
-from locators import AdminDashboardPage as AP
+from HW7_8.locators import AdminDashboardPage as AP
 import allure
 
 

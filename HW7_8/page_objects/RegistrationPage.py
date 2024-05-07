@@ -1,5 +1,5 @@
 from BaseApp import BasePage
-from locators import RegisterPage as RP
+from HW7_8.locators import RegisterPage as RP
 import allure
 
 

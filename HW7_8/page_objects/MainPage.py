@@ -1,5 +1,5 @@
 from BaseApp import BasePage
-from locators import MainPage as MP
+from HW7_8.locators import MainPage as MP
 import random
 import allure
 

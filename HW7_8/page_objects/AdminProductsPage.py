@@ -1,7 +1,7 @@
 from BaseApp import BasePage
-from locators import AdminProductPage as APP
-from locators import AdminDashboardPage as ADP
-from locators import get_unique_locator_xpath
+from HW7_8.locators import AdminProductPage as APP
+from HW7_8.locators import AdminDashboardPage as ADP
+from HW7_8.locators import get_unique_locator_xpath
 import time
 import allure
 

@@ -3,7 +3,7 @@ from CatalogPage import CatalogDesktopsPage
 from ProductPage import ProductPage
 from AdminLoginPage import AdminLoginPage
 from RegistrationPage import RegistrationPage
-import locators
+import HW7_8.locators as locators
 import allure
 
 
