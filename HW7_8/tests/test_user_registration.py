@@ -1,4 +1,4 @@
-from RegistrationPage import RegistrationPage
+from HW7_8.page_objects.RegistrationPage import RegistrationPage
 import allure
 
 

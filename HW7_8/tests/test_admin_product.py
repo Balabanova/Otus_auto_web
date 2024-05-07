@@ -1,7 +1,7 @@
 import pytest
-from AdminLoginPage import AdminLoginPage
-from AdminProductsPage import AdminProductsPage as APP
-from AdminNewProductPage import AdminNewProductsPage as ANPP
+from HW7_8.page_objects.AdminLoginPage import AdminLoginPage
+from HW7_8.page_objects.AdminProductsPage import AdminProductsPage as APP
+from HW7_8.page_objects.AdminNewProductPage import AdminNewProductsPage as ANPP
 from selenium.common.exceptions import TimeoutException
 import allure
 

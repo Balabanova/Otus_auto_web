@@ -1,4 +1,4 @@
-from BaseApp import BasePage
+from HW7_8.page_objects.BaseApp import BasePage
 from HW7_8.locators import MainPage as MP
 import random
 import allure

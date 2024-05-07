@@ -1,7 +1,7 @@
 import pytest
-from HeaderElement import HeaderElement
-from CatalogPage import CatalogDesktopsPage
-from MainPage import MainPage
+from HW7_8.page_objects.HeaderElement import HeaderElement
+from HW7_8.page_objects.CatalogPage import CatalogDesktopsPage
+from HW7_8.page_objects.MainPage import MainPage
 import allure
 
 

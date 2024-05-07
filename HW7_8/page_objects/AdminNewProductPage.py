@@ -1,5 +1,4 @@
-from BaseApp import BasePage
-from AdminLoginPage import AdminLoginPage
+from HW7_8.page_objects.BaseApp import BasePage
 from HW7_8.locators import AdminProductPage as APP
 from HW7_8.locators import AdminNewProductPage as ANPP
 import random

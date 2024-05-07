@@ -1,6 +1,5 @@
-from BaseApp import BasePage
+from HW7_8.page_objects.BaseApp import BasePage
 from HW7_8.locators import CartPage as CP
-import pytest
 
 
 class CartPage(BasePage):

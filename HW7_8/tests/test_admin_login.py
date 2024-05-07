@@ -1,7 +1,7 @@
 import pytest
 import allure
-from AdminLoginPage import AdminLoginPage
-from AdminHeaderElement import HeaderElement
+from HW7_8.page_objects.AdminLoginPage import AdminLoginPage
+from HW7_8.page_objects.AdminHeaderElement import HeaderElement
 
 
 @pytest.fixture(scope="class")

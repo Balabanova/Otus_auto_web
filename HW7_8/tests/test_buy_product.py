@@ -1,5 +1,5 @@
-from MainPage import MainPage as MP
-from CartPage import CartPage as CP
+from HW7_8.page_objects.MainPage import MainPage as MP
+from HW7_8.page_objects.CartPage import CartPage as CP
 import allure
 
 

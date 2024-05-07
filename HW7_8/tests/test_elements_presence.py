@@ -1,8 +1,8 @@
-from MainPage import MainPage
-from CatalogPage import CatalogDesktopsPage
-from ProductPage import ProductPage
-from AdminLoginPage import AdminLoginPage
-from RegistrationPage import RegistrationPage
+from HW7_8.page_objects.MainPage import MainPage
+from HW7_8.page_objects.CatalogPage import CatalogDesktopsPage
+from HW7_8.page_objects.ProductPage import ProductPage
+from HW7_8.page_objects.AdminLoginPage import AdminLoginPage
+from HW7_8.page_objects.RegistrationPage import RegistrationPage
 import HW7_8.locators as locators
 import allure
 
