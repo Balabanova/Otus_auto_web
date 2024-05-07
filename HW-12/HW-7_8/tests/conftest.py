@@ -10,7 +10,7 @@ from selenium.webdriver.firefox.options import Options as FirefoxOptions
 def pytest_addoption(parser):
     parser.addoption('--browser', default='chrome')
     parser.addoption('--url', default='http://192.168.56.1:8081')
-    parser.addoption('--launch', default='remote')
+    parser.addoption('--launch', default='local')
     parser.addoption('--executor', default='127.0.0.1')
 
 
